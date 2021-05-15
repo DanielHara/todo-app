@@ -26,8 +26,15 @@ function App() {
       />
 
       <ul>
-        {list.map((item, index) => <li>
-            {item}
+        {list.map((item, index) => <li className={styles.tile}>
+            <div className={styles.completeButtonWrapper}>
+              <button className={styles.completeButton} />
+            </div>
+            <div className={styles.text}>
+              {item}
+            </div>
+            <div className={styles.removeButtonWrapper} >
+            </div>
           </li>
         )}
       </ul>
