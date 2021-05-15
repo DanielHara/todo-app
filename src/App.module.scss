@@ -36,6 +36,12 @@
   border-radius: 50%;
 }
 
+.completedButton {
+  background: url('icon-check.svg') no-repeat center;
+  background-color: green;
+  background-size: 70% 70%;
+}
+
 .removeButton {
   font-size: 2rem;
   width: 40px;

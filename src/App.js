@@ -100,7 +100,7 @@ function App() {
                 provided.draggableProps.style
               )}>
               <div className={styles.completeButtonWrapper}>  
-                <button className={styles.completeButton}
+                <button className={clsx(styles.completeButton, {[styles.completedButton]: complete})}
                   onClick={() => { completeIndex(index); }}
                 />
               </div>
