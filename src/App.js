@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import clsx from 'clsx';
 import styles from './App.module.scss';
 
 function App() {
@@ -6,11 +7,20 @@ function App() {
   const [newTodo, setNewTodo] = useState('');
 
   const addToList = (todo) => {
-    setList(list.concat(todo))
+    setList(list.concat({
+      text: todo,
+      complete: false
+    }))
   }
 
   const removeIndex = (index) => {
     setList(list.slice(0, index).concat(list.slice(index + 1)));
+  }
+
+  const completeIndex = (index) => {
+    const updatedList = [...list];
+    updatedList[index].complete = true;
+    setList(updatedList);
   }
 
   return (
@@ -35,12 +45,14 @@ function App() {
         </div>
 
       <ul className={styles.list}>
-        {list.map((item, index) => <li className={styles.tile}>
+        {list.map(( { text, complete }, index) => <li className={styles.tile}>
             <div className={styles.completeButtonWrapper}>
-              <button className={styles.completeButton} />
+              <button className={styles.completeButton}
+                onClick={() => { completeIndex(index); }}
+              />
             </div>
-            <div className={styles.text}>
-              {item}
+            <div className={clsx(styles.text, {[styles.completedText]: complete})}>
+              {text}
             </div>
             <div className={styles.removeButtonWrapper} >
               <button className={styles.removeButton} onClick={() => removeIndex(index)}>
