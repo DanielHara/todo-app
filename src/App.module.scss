@@ -3,6 +3,22 @@
   margin: 0 auto;
 }
 
+.inputTile {
+  padding: 20px;
+  margin: 0 auto;
+  border: 1px solid gray;
+}
+
+.inputWrapper {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.input {
+  font-size: 2rem;
+  width: 100%;
+}
 
 .tile {
   border: 1px solid gray;
@@ -11,7 +27,7 @@
 
 .completeButtonWrapper {
   width: 10%;
-  padding: 20px;
+  padding: 20px 0 20px 20px;
 }
 
 .completeButton {
@@ -20,12 +36,23 @@
   border-radius: 50%;
 }
 
+.removeButton {
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+}
+
 .text {
-  width: 80%;
-  padding: 20px;
+  width: 85%;
+  padding: 20px 0px;
   font-size: 2rem;
 }
 
 .removeButtonWrapper {
-  width: 10%;
+  width: 5%;
+  padding: 20px 20px 20px 0;
+}
+
+.list {
+  padding: 0;
 }
