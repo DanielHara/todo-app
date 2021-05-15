@@ -46,7 +46,6 @@ function App() {
   }
 
   const onDragEnd = (result) => {
-    // dropped outside the list
     if (!result.destination) {
       return;
     }
